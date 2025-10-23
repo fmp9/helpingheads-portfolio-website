@@ -1,43 +1,7 @@
-# Astro Starter Kit: Minimal
+# helping heads—Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## What is it about?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This is the portfolio Website for helping heads. helping heads is an austrian creative company. They create innovative ideas, unique installations, and conceptually rich large-scale projects. For many years, they have been working with light and projections, developing custom constructions and unconventional concepts for events and artistic productions.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+In addition, they offer mobile water walls, water curtains, water shows, and indoor water fountains. They see themselves as a creative think tank and consulting partner for clients seeking extraordinary and memorable presentations.
