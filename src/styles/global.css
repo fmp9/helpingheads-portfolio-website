@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url('/fonts/Raleway-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Raleway-Bedium';
+  src: url('/fonts/Raleway-800.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: 'Raleway-Medium', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --brand-col: '#00b4d8'
+}
+
+html {
+  font-family: var(--font-body);
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}

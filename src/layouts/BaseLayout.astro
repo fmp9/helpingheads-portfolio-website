@@ -1,0 +1,86 @@
+---
+import "../styles/global.css"
+const {
+  title = "helping heads",
+  description = "helping heads – Kreative Event- und Showkonzepte mit Licht, Projektionen, Sonderkonstruktionen und außergewöhnlichen Wasserinstallationen.",
+  url = Astro.site ? String(Astro.site) : "https://www.helpingheads.at/",
+  image = "/og-image.jpg", 
+  siteName = "helping heads",
+  noindex = false, 
+  nofollow = false,
+  robotsExtra = "max-image-preview:large", 
+} = Astro.props;
+
+const robots = noindex
+  ? "noindex, nofollow, noarchive"
+  : `index, ${nofollow ? "nofollow" : "follow"}, ${robotsExtra}`;
+
+const toAbs = (p: string) => (p?.startsWith("http") ? p : new URL(p, url).toString());
+---
+
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title & Meta -->
+    <title>{title} | {siteName}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="author" content={siteName} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={`${title} | ${siteName}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={toAbs(image)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | ${siteName}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={toAbs(image)} />
+    <meta name="twitter:image:alt" content={`${siteName} – ${title}`} />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Slot für seiten-spezifische Head-Erweiterungen -->
+    <slot name="head" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Hauptnavigation">
+        <a href="/" rel="index">Home</a>
+        <a href="/about" rel="about">Über Uns</a>
+        <a href="/projects" rel="projects">Projekte</a>
+        <a href="/references" rel="references">Referenzen</a>
+      </nav>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+
+    <footer role="contentinfo" data-nosnippet>
+      <p>&copy; {new Date().getFullYear()} {siteName}. Alle Rechte vorbehalten.</p>
+      <nav aria-label="Footernavigation">
+
+        <a href="/impressum" rel="nofollow">Impressum</a>
+        <a href="/datenschutz" rel="nofollow">Datenschutz</a>
+        <a href="/kontakt" rel="nofollow">Kontakt</a>
+      </nav>
+    </footer>
+  </body>
+</html>
