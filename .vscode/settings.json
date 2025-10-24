@@ -1,0 +1,13 @@
+{
+  // Use the Prettier extension for .astro
+  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // Make the extension use your project's Prettier (so it can see plugins)
+  "prettier.prettierPath": "./node_modules/prettier",
+
+  // Helpful if Prettier or plugins are global (not recommended, but just in case)
+  "prettier.resolveGlobalModules": true,
+
+  // Optional quality-of-life
+  "editor.formatOnSave": true
+}

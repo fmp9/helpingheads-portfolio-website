@@ -8,6 +8,6 @@ In addition, they offer mobile water walls, water curtains, water shows, and ind
 
 ## Development
 
-Im working with Astro + Tailwind + React. I previously built this website with Vue.js. I got to know about Astro and wanted to learn it. This project has the purpose of diving deeper into Astro and other frontend frameworks. 
+Im working with Astro + Tailwind + React. I previously built this website with Vue.js. I got to know about Astro and wanted to learn it. This project has the purpose of diving deeper into Astro and other frontend frameworks.
 
 Link to website: https://www.helpingheads.at/

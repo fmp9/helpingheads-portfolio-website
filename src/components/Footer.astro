@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+---
+
+<footer
+  role="contentinfo"
+  data-nosnippet
+  class="align-center footer z-99 flex w-full justify-between px-10 py-8"
+>
+  <p>
+    &copy; {new Date().getFullYear()}
+    Florian Prassé. Alle Rechte vorbehalten.
+  </p>
+  <nav aria-label="Footernavigation" class="flex gap-6">
+    <a href="/impressum" rel="nofollow">Impressum</a>
+    <a href="/datenschutz" rel="nofollow">Datenschutz</a>
+    <a href="mailto:kurt@helpingheads.at?cc=sina@helpingheads.at" rel="nofollow"
+      >Mail</a
+    >
+  </nav>
+</footer>
+
+<style>
+  .footer {
+    border-top: dotted 3px var(--text-grey);
+  }
+  p,
+  a {
+    color: var(--text-grey);
+  }
+</style>

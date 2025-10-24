@@ -1,24 +1,28 @@
 ---
-import "../styles/global.css"
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+
+import "../styles/global.css";
 const {
   title = "helping heads",
   description = "helping heads – Kreative Event- und Showkonzepte mit Licht, Projektionen, Sonderkonstruktionen und außergewöhnlichen Wasserinstallationen.",
   url = Astro.site ? String(Astro.site) : "https://www.helpingheads.at/",
-  image = "/og-image.jpg", 
+  image = "/og-image.jpg",
   siteName = "helping heads",
-  noindex = false, 
+  noindex = false,
   nofollow = false,
-  robotsExtra = "max-image-preview:large", 
+  robotsExtra = "max-image-preview:large",
 } = Astro.props;
 
 const robots = noindex
   ? "noindex, nofollow, noarchive"
   : `index, ${nofollow ? "nofollow" : "follow"}, ${robotsExtra}`;
 
-const toAbs = (p: string) => (p?.startsWith("http") ? p : new URL(p, url).toString());
+const toAbs = (p: string) =>
+  p?.startsWith("http") ? p : new URL(p, url).toString();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de" dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -60,27 +64,10 @@ const toAbs = (p: string) => (p?.startsWith("http") ? p : new URL(p, url).toStri
   </head>
 
   <body>
-    <header>
-      <nav aria-label="Hauptnavigation">
-        <a href="/" rel="index">Home</a>
-        <a href="/about" rel="about">Über Uns</a>
-        <a href="/projects" rel="projects">Projekte</a>
-        <a href="/references" rel="references">Referenzen</a>
-      </nav>
-    </header>
-    
+    <Navigation />
     <main>
       <slot />
     </main>
-
-    <footer role="contentinfo" data-nosnippet>
-      <p>&copy; {new Date().getFullYear()} {siteName}. Alle Rechte vorbehalten.</p>
-      <nav aria-label="Footernavigation">
-
-        <a href="/impressum" rel="nofollow">Impressum</a>
-        <a href="/datenschutz" rel="nofollow">Datenschutz</a>
-        <a href="/kontakt" rel="nofollow">Kontakt</a>
-      </nav>
-    </footer>
+    <Footer />
   </body>
 </html>

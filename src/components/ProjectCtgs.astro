@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+import GestPrev from "../images/Gestaltungen/adidasmessestand/adidas1.png";
+import LichtPrev from "../images/Licht/Lichterweg/IMG_8413.jpg";
+import ProjPrev from "../images/Projektionen/Mapping/mapping1.jpg";
+import SondPrev from "../images/Sonderkonstruktionen/LaTraviata/2.jpg";
+import WatPrev from "../images/Wasser/Wasserwand/ww-2.jpg";
+---
+
+<section class="project-categories flex items-center justify-center p-8">
+  <div class="grid grid-cols-1 gap-20">
+    <!-- ITEM 1 -->
+    <div class="flex items-center gap-8">
+      <div class="flex w-[350px] flex-col justify-center">
+        <h4 class="mb-3 text-2xl">Gestaltungen</h4>
+        <p class="mb-6">
+          Wir gestalten kreative Events, Landschaften und Ausstellungen mit
+          Kunst, Licht und interaktiven Elementen.
+        </p>
+        <Button>Mehr erfahren</Button>
+      </div>
+      <div class="h-[500px] w-[700px] overflow-hidden">
+        <Image
+          src={GestPrev}
+          alt="Adidas Messestand"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="flex items-center gap-8">
+      <div class="flex w-[350px] flex-col justify-center">
+        <h4 class="mb-3 text-2xl">Licht</h4>
+        <p class="mb-6">
+          Mit innovativer Lichttechnik schaffen wir stimmungsvolle
+          Inszenierungen, die Menschen begeistern und verbinden.
+        </p>
+        <Button>Mehr erfahren</Button>
+      </div>
+      <div class="h-[500px] w-[700px] overflow-hidden">
+        <Image
+          src={LichtPrev}
+          alt="Leuchtturm Podersdorf"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="flex items-center gap-8">
+      <div class="flex w-[350px] flex-col justify-center">
+        <h4 class="mb-3 text-2xl">Projektionen</h4>
+        <p class="mb-6">
+          Unsere Projektionen verwandeln Gebäude, Landschaften und Flächen in
+          eindrucksvolle visuelle Erlebnisse.
+        </p>
+        <Button>Mehr erfahren</Button>
+      </div>
+      <div class="h-[500px] w-[700px] overflow-hidden">
+        <Image
+          src={ProjPrev}
+          alt="Mapping"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="flex items-center gap-8">
+      <div class="flex w-[350px] flex-col justify-center">
+        <h4 class="mb-3 text-2xl">Sonderkonstruktionen</h4>
+        <p class="mb-6">
+          Wir realisieren individuelle Sonderkonstruktionen, die durch
+          Kreativität und Einzigartigkeit überzeugen.
+        </p>
+        <Button>Mehr erfahren</Button>
+      </div>
+      <div class="h-[500px] w-[700px] overflow-hidden">
+        <Image
+          src={SondPrev}
+          alt="La Traviata"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="flex justify-between gap-8">
+      <div class="flex w-[350px] flex-col justify-center">
+        <h4 class="mb-3 text-2xl">Wasser</h4>
+        <p class="mb-6">
+          Mit Wasser als Gestaltungselement erschaffen wir faszinierende
+          Installationen aus Licht, Bewegung und Klang.
+        </p>
+        <Button>Mehr erfahren</Button>
+      </div>
+      <div class="h-[500px] w-[700px] overflow-hidden">
+        <Image
+          src={WatPrev}
+          alt="Wasserwand"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>

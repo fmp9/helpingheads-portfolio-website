@@ -1,6 +1,62 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Prism from "@/components/react/Prism";
+import Button from "@/components/Button.astro";
+import ProjectCtgs from "@/components/ProjectCtgs.astro";
 ---
 
-<BaseLayout title="Home"> <h1>helping heads</h1></BaseLayout >
+<BaseLayout title="Home">
+  <section class="hero-section">
+    <div class="relative h-[100vh] w-full">
+      <div class="hidden">
+        <Prism
+          client:load
+          animationType="rotate"
+          timeScale={0.5}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.6}
+          hueShift={0}
+          colorFrequency={1}
+          noise={0}
+          glow={1}
+        />
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-16"
+      >
+        <h1 class="text-7xl">helping heads</h1>
+        <div class="buttons-wrapper flex gap-6">
+          <Button variant="primary">Projekte ansehen</Button>
+          <Button variant="secondary">Mehr erfahren</Button>
+        </div>
+      </div>
+      <div class="hero-second absolute bottom-0 left-0 px-10 py-8">
+        <h2>Umwerfende Konzepte.</h2>
+        <h2>Unvergessliche Erlebnisse.</h2>
+      </div>
+    </div>
+  </section>
+  <section class="brand-info-text flex h-[100vh] items-center">
+    <p
+      class="mx-10 max-w-[1100px] indent-24 [font-size:clamp(1.2rem,3vw,2.3rem)]"
+    >
+      Wir gestalten außergewöhnliche Konzepte, Installationen und
+      Sonderkonstruktionen mit Licht, Projektionen und Wasser, um für unsere
+      Kunden unkonventionelle und eindrucksvolle Erlebnisse zu schaffen.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .project-categories {
+    background-color: var(--text);
+  }
+  .project-categories h4 {
+    color: var(--bg-col);
+  }
+  .project-categories p {
+    color: var(--bg-col);
+  }
+</style>
