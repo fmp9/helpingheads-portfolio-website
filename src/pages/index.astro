@@ -1,28 +1,13 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Prism from "@/components/react/Prism";
 import Button from "@/components/Button.astro";
-import ProjectCtgs from "@/components/ProjectCtgs.astro";
+import ProjectCtgs from "@/components/ProjectCtgs_.astro";
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Home" class="z-10" }>
   <section class="hero-section">
-    <div class="relative h-[100vh] w-full">
-      <div class="hidden">
-        <Prism
-          client:load
-          animationType="rotate"
-          timeScale={0.5}
-          height={3.5}
-          baseWidth={5.5}
-          scale={3.6}
-          hueShift={0}
-          colorFrequency={1}
-          noise={0}
-          glow={1}
-        />
-      </div>
+    <div class="relative h-screen w-full">
       <div
         class="absolute top-1/2 left-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-16"
       >
@@ -38,25 +23,15 @@ import ProjectCtgs from "@/components/ProjectCtgs.astro";
       </div>
     </div>
   </section>
-  <section class="brand-info-text flex h-[100vh] items-center">
-    <p
-      class="mx-10 max-w-[1100px] indent-24 [font-size:clamp(1.2rem,3vw,2.3rem)]"
-    >
+  <section class="brand-info-text flex h-screen items-center">
+    <p class="mx-10 max-w-[1100px] indent-24 text-[clamp(1.2rem,3vw,2.3rem)]">
       Wir gestalten außergewöhnliche Konzepte, Installationen und
       Sonderkonstruktionen mit Licht, Projektionen und Wasser, um für unsere
       Kunden unkonventionelle und eindrucksvolle Erlebnisse zu schaffen.
     </p>
   </section>
-</BaseLayout>
 
-<style>
-  .project-categories {
-    background-color: var(--text);
-  }
-  .project-categories h4 {
-    color: var(--bg-col);
-  }
-  .project-categories p {
-    color: var(--bg-col);
-  }
-</style>
+  <section>
+    <ProjectCtgs />
+  </section>
+</BaseLayout>

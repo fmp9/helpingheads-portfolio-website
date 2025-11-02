@@ -1,26 +1,144 @@
 ---
 import Logo from "../assets/logo.svg";
+import LogoDark from "../assets/logo-dark.svg";
+import Arrow from "@/assets/arrow.svg";
+import "@/styles/global.css";
 ---
 
 <header>
-  <nav
-    class="navigation fixed z-99 flex w-full justify-between px-10 py-8"
-    aria-label="main navigation"
+  <div class="desktop-navigation hidden md:block">
+    <nav
+      class="fixed z-50 w-full items-center justify-center px-10 py-8 md:flex"
+      aria-label="main navigation"
+    >
+      <div class="logo-wrapper absolute top-0 left-0 px-10 py-7">
+        <a href="/" rel="index">
+          <Logo width={32} height={32} />
+        </a>
+      </div>
+      <div class="links flex gap-12">
+        <a href="/" rel="index">Home</a>
+        <a href="/projects" rel="projects">Projekte</a>
+        <a href="/contact" rel="references">Kontakt</a>
+        <a href="/about" rel="about">Über Uns</a>
+        <a href="/references" rel="references">Referenzen</a>
+      </div>
+    </nav>
+  </div>
+
+  <div
+    class="mobile-nav fixed top-0 left-0 z-50 flex w-full px-8 py-6 md:hidden"
   >
-    <a href="/" rel="index">
-      <Logo width={32} height={32} fill="#ffff" />
-    </a>
-    <div class="links flex gap-12">
-      <a href="/" rel="index">Home</a>
-      <a href="/about" rel="about">Über Uns</a>
-      <a href="/projects" rel="projects">Projekte</a>
-      <a href="/references" rel="references">Referenzen</a>
-    </div>
-  </nav>
-  <a
-    rel="nofollow"
-    style="text-decoration:underline; "
-    href="mailto:kurt@helpingheads.at?cc=sina@helpingheads.at"
-    class="absolute fixed right-0 bottom-0 z-99 px-10 py-8">Mail</a
-  >
+    <nav
+      aria-label="mobile-navigation"
+      class="flex h-full w-full flex-col justify-center"
+    >
+      <a href="/" rel="index" class="absolute top-0 left-0 z-50 m-4">
+        <Logo width={48} height={48} />
+      </a>
+      <div class="hidden" id="mobile-nav">
+        <div
+          class="mobile-menu-container fixed top-0 left-0 flex h-screen w-screen flex-col justify-center bg-black"
+        >
+          <div class="mobile-links flex flex-col gap-12">
+            <div class="mobile-links mx-4">
+              <p class="links-title mb-2 text-2xl uppercase">Sitemap</p>
+              <div class="links flex flex-col gap-2.5 text-5xl">
+                <a href="/" rel="index">Home</a>
+                <a href="/projects" rel="projects">Projekte</a>
+                <a href="/contact" rel="references">Kontakt</a>
+                <a href="/about" rel="about">Über Uns</a>
+                <a href="/references" rel="references">Referenzen</a>
+              </div>
+            </div>
+            <div class="socials-wrapper mx-4">
+              <p class="links-title mb-2 text-2xl uppercase">Socials</p>
+              <div class="links links flex flex-col gap-1 text-3xl">
+                <a
+                  href="https://www.facebook.com/people/Helping-Heads-Projektentwicklung/100091342603125/?locale=de_DE"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank">Facebook</a
+                >
+                <a
+                  href="https://www.instagram.com/helping.heads/"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank">Instagram</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/helping-heads-projektentwicklung-a34154336/"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow">LinkedIn</a
+                >
+              </div>
+            </div>
+            <div
+              class="bottom-nav absolute bottom-0 flex w-full items-center justify-between"
+            >
+              <p class="links-title mx-4 text-xl">helping heads</p>
+              <div class="mail-wrapper">
+                <a
+                  href="mailto:kurt@helpingheads.at?cc=sina@helpingheads.at "
+                  class="mx-4 inline-flex w-fit items-center justify-center gap-1 rounded-full px-4 py-1"
+                  style="background-color: var(--text); color: var(--bg-col)"
+                  ><span>E-Mail</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mb-0.5 h-8 w-8 -rotate-45"
+                  >
+                    <path d="M5 12h10"></path>
+                    <path d="M11 7l5 5-5 5"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="absolute top-0 right-0 z-99 mx-4 my-8 flex h-4 w-8 flex-col justify-between md:hidden"
+        aria-label="Menu"
+        id="burger-btn"
+      >
+        <span class="line block h-0.5 w-full rounded bg-current"></span>
+        <span class="line block h-0.5 w-full rounded bg-current"></span>
+        <span class="line block h-0.5 w-full rounded bg-current"></span>
+      </button>
+    </nav>
+  </div>
+
+  <style>
+    .links-title {
+      color: var(--text-grey);
+    }
+    .bottom-nav {
+      border-top: dotted 3px var(--text-grey);
+      height: 100px;
+    }
+    a.links-title {
+      width: fit-content;
+      padding: 4px 4px 4px 0;
+    }
+  </style>
 </header>
+
+<script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const mobileNav = document.getElementById("mobile-nav");
+
+  burgerBtn?.addEventListener("click", () => {
+    const isOpen = mobileNav?.classList.toggle("block");
+    mobileNav?.classList.toggle("hidden", !isOpen);
+
+    document.body.classList.toggle("overflow-hidden", isOpen);
+  });
+  mobileNav?.addEventListener("click", () => {
+    mobileNav.classList.add("hidden");
+    document.body.classList.toggle("overflow-hidden");
+  });
+</script>

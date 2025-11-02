@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import { categories } from "@/data/projectData";
+---
+
+<section class="ctgries" }>
+  <h3 class="text-5xl">Projektkategorien</h3>
+  <p>
+    Wir bieten verschiedenste Projekte an, die wir in fünf Kategorien
+    unterteilen.
+  </p>
+  {
+    categories.map((c) => (
+      <div>
+        <h1>{c.category}</h1>
+        <p>{c.info}</p>
+        <Image src={c.src} alt={c.alt} />
+      </div>
+    ))
+  }
+</section>
