@@ -22,8 +22,9 @@
     Roboto, sans-serif;
   --bg-col: #0b0b0b;
   --btn-col: #0b0b0b39;
-  --text:#f4fff8 ;
-  --text-grey: #f4fff882 ;
+  --text: #f4fff8;
+  --text-grey: #f4fff882;
+  --brand: #8ebf88;
 }
 
 html {

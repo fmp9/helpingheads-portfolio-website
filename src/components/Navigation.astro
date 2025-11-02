@@ -1,7 +1,6 @@
 ---
 import Logo from "../assets/logo.svg";
-import LogoDark from "../assets/logo-dark.svg";
-import Arrow from "@/assets/arrow.svg";
+
 import "@/styles/global.css";
 ---
 
@@ -26,6 +25,7 @@ import "@/styles/global.css";
     </nav>
   </div>
 
+  <!-- mobile -->
   <div
     class="mobile-nav fixed top-0 left-0 z-50 flex w-full px-8 py-6 md:hidden"
   >
@@ -38,7 +38,8 @@ import "@/styles/global.css";
       </a>
       <div class="hidden" id="mobile-nav">
         <div
-          class="mobile-menu-container fixed top-0 left-0 flex h-screen w-screen flex-col justify-center bg-black"
+          class="mobile-menu-container fixed top-0 left-0 flex h-screen w-screen flex-col justify-center"
+          style="background-color: var(--brand);"
         >
           <div class="mobile-links flex flex-col gap-12">
             <div class="mobile-links mx-4">
@@ -120,25 +121,30 @@ import "@/styles/global.css";
       border-top: dotted 3px var(--text-grey);
       height: 100px;
     }
-    a.links-title {
-      width: fit-content;
-      padding: 4px 4px 4px 0;
-    }
   </style>
 </header>
 
 <script>
-  const burgerBtn = document.getElementById("burger-btn");
-  const mobileNav = document.getElementById("mobile-nav");
+  document.addEventListener("DOMContentLoaded", () => {
+    const burgerBtn = document.getElementById("burger-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+    let isOpen = false;
 
-  burgerBtn?.addEventListener("click", () => {
-    const isOpen = mobileNav?.classList.toggle("block");
-    mobileNav?.classList.toggle("hidden", !isOpen);
+    burgerBtn?.addEventListener("click", () => {
+      if (!isOpen) openMenu();
+      else closeMenu();
+    });
 
-    document.body.classList.toggle("overflow-hidden", isOpen);
-  });
-  mobileNav?.addEventListener("click", () => {
-    mobileNav.classList.add("hidden");
-    document.body.classList.toggle("overflow-hidden");
+    const openMenu = () => {
+      mobileNav?.classList.remove("hidden");
+      mobileNav?.classList.add("block");
+      isOpen = true;
+    };
+
+    const closeMenu = () => {
+      mobileNav?.classList.remove("block");
+      mobileNav?.classList.add("hidden");
+      isOpen = false;
+    };
   });
 </script>
