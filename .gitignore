@@ -2,8 +2,6 @@
 dist/
 # generated types
 .astro/
-# Ignore all images in this folder
-src/images/
 # dependencies
 node_modules/
 
